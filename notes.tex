@@ -1,0 +1,60 @@
+
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{RAS Team}
+\title{Paper Notes}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Notes}
+\begin{itemize}
+    \item motivation 
+    \item problem statement
+    \item approach
+    \item results
+    \item conclusions
+\end{itemize}
+
+\section{abstract}
+
+\subsection{motivation}
+why do we care about the problem?
+\begin{itemize}
+    \item home robotics are becoming more common
+    \item as the ratio of elderly people to caretakers increases having an in-home nurse becomes impractical. We want to be able to place a robot in a persons home to act as an in-home assistant so the person can stay independent for longer.
+    \item in order for the robot to live in harmony with people the robot needs to stay close enough to be able to interact with the person when needed, but also out of the way.
+\end{itemize}
+
+\subsection{problem statement}
+Where should the robot be when it does not need to interact with any people.
+
+\subsection{approach}
+Using motion sensors embedded in the home we derive the average location of the residents and an estimate of traffic through the space. Using these two features we score every point in the space and output the highest scoring reachable point.
+
+\subsection{results}
+Points taken from the system and evaluated subjectively provide good results, being either the top 1 or 2 of human judged placements as compared to other places chosen randomly in the space. \textless insert results from static study\textgreater \textless insert results from DTD evaluation.\textgreater
+
+\subsection{conclusions}
+We present an algorithm for dynamic placement of a mobile home assistant robot when no tasks are required. Subjective analysis reveals our algorithm chooses good places to locate the robot. We hope this work provides a good base for future work in mobile robot placement in smarthomes in the future.
+
+\subsection{drafts}
+\subsubsection{draft 1}
+As the ratio of people in need of care to the number of caretakers increases having an in-home nurse becomes more expensive and impractical. Robotic asistance of the elderly is a promising solution to allow people to age in-place more independently. A problem in robotic asistance is where to place the robot when no assistance is needed. The robot should be close enough that it can effectively assist the person if it should become needed, but also out of the way. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. \textless insert results from all the things.\textgreater
+
+
+\section{Introduction}
+
+\section{Related work}
+
+
+
+\end{document}
