@@ -72,10 +72,54 @@ place. \textless insert results from all the things.\textgreater
 
 \section{Introduction}
 
-
-
+Probably do introduction after we finish the rest of the papper
 
 \section{Related work}
+
+\subsection{To Cite}
+\begin{itemize}
+    \item original RAS paper
+    \item smart home papers
+\end{itemize}
+
+\section{Methods}
+
+\subsection{Notes}
+subsections:
+\begin{itemize}
+    \item re-introduce the problem?
+    \item overview of the solution
+    \item section detailing heatmap
+    \item section detailing reachability map
+    \item section detailing path map
+    \item etc...
+\end{itemize}
+
+\subsection{Draft 1}
+
+\subsubsection{Problem}
+We are given a SLAM (Simultaneous Location And Mapping) map of the smart home
+and a real time stream of motion sensor data aligned to that slam map.
+Our task is to find a place in the home that allows the robot to move to the
+residents in as short a time as possible (Distance to delivery) while also
+remaining out o fthe way should the residents need to move to a new area of
+the home.
+
+\subsubsection{overview}
+Using the SLAM map we build a map representing all areas the robot can reach.
+Using the sensor data we build two heatmaps, a long term heatmap and a short
+term heatmap. From the long term heatmap we build a map estimating the traffic
+through the house, which we call the path map. From the short term heatmap we 
+take the weighted average of each point to find the center of recent resident 
+activity. Both the weighted average point and the path map are then used to
+score each point in the reachability map. We then return the maximum scoring
+point as the point the robot should be.
+
+\section{Citations}
+\subsection{to cite}
+\begin{itemize}
+    \item SLAM paper
+\end{itemize}
 
 
 
