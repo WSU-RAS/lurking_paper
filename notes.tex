@@ -72,7 +72,7 @@ place. \textless insert results from all the things.\textgreater
 
 \section{Introduction}
 
-Probably do introduction after we finish the rest of the papper
+Probably do introduction after we finish the rest of the paper
 
 \section{Related work}
 
@@ -95,9 +95,7 @@ subsections:
     \item etc...
 \end{itemize}
 
-\subsection{Draft 1}
-
-\subsubsection{Problem}
+\subsection{Problem}
 We are given a SLAM (Simultaneous Location And Mapping) map of the smart home
 and a real time stream of motion sensor data aligned to that slam map.
 Our task is to find a place in the home that allows the robot to move to the
@@ -105,7 +103,7 @@ residents in as short a time as possible (Distance to delivery) while also
 remaining out o fthe way should the residents need to move to a new area of
 the home.
 
-\subsubsection{overview}
+\subsection{Overview of the Solution}
 Using the SLAM map we build a map representing all areas the robot can reach.
 Using the sensor data we build two heatmaps, a long term heatmap and a short
 term heatmap. From the long term heatmap we build a map estimating the traffic
@@ -114,6 +112,13 @@ take the weighted average of each point to find the center of recent resident
 activity. Both the weighted average point and the path map are then used to
 score each point in the reachability map. We then return the maximum scoring
 point as the point the robot should be.
+
+\subsection{Creating and Using the Heatmaps}
+The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap. 
+The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
+
+\subsection{Creating and Using the Reachability Map}
+\textit{\textbf{tbd}} 
 
 \section{Citations}
 \subsection{to cite}
