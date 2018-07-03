@@ -17,8 +17,8 @@
 
 \section{random notes}
 
-We are providing a simple, effective, and accurate way to find unobtrusive 
-places for a robot to sit while being close to people.
+We are providing a simple, effective, and accurate way to select unobtrusive 
+places for a robot to sit in standby while staying close enough to the resident to be able to assist them in a timely manner.
 
 
 \section{abstract}
@@ -27,28 +27,24 @@ places for a robot to sit while being close to people.
 why do we care about the problem?
 \begin{itemize}
     \item home robotics are becoming more common
-    \item as the ratio of elderly people to caretakers increases having an 
+    \item as the ratio of elderly people to caretakers increases, having an 
         in-home nurse becomes impractical. We want to be able to place a robot 
-        in a persons home to act as an in-home assistant so the person can stay 
-        independent for longer.
-    \item in order for the robot to live in harmony with people the robot needs 
-        to stay close enough to be able to interact with the person when 
+        in a person's home to act as an in-home assistant so the person can continue to live 
+        independently for as long as possible.
+    \item in order for the robot to live in harmony with the residents, the robot needs 
+        to stay close enough to be able to assist the person as 
         needed, but also out of the way.
 \end{itemize}
 
 \subsection{problem statement}
-Where should the robot be when it does not need to interact with any people.
+Where should the robot be when it is on standby so that it is able to assist people in a timely manner but not obstruct or annoy residents? 
 
 \subsection{approach}
 Using motion sensors embedded in the home we derive the average location of the 
-residents and an estimate of traffic through the space. Using these two 
-features we score every point in the space and output the highest scoring 
-reachable point.
+residents to estimate traffic in the space. Using maps made from this data, we assign a score to every point in the space and return the highest-scoring point within the robot's reach. 
 
 \subsection{results}
-Points taken from the system and evaluated subjectively provide good results, 
-being either the top 1 or 2 of human judged placements as compared to other 
-places chosen randomly in the space. \textless insert results from static 
+Points taken from the system that were evaluated subjectively provide good results since they corresponded with either the first or second choice of human participants.\textless insert results from static 
 study\textgreater \textless insert results from DTD evaluation.\textgreater
 
 \subsection{conclusions}
@@ -85,14 +81,9 @@ Probably do introduction after we finish the rest of the paper
 \section{Methods}
 
 \subsection{Notes}
-subsections:
+subsections to create:
 \begin{itemize}
     \item re-introduce the problem?
-    \item overview of the solution
-    \item section detailing heatmap
-    \item section detailing reachability map
-    \item section detailing path map
-    \item etc...
 \end{itemize}
 
 \subsection{Problem}
@@ -119,6 +110,9 @@ The short-term heatmap, which is generated on a regular basis, assists the navig
 
 \subsection{Creating and Using the Reachability Map}
 \textit{\textbf{tbd}} 
+
+\subsection{Creating and Using the PathMap}
+\textit{\textbf{tbd}}
 
 \section{Citations}
 \subsection{to cite}
