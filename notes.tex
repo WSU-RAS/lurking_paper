@@ -7,117 +7,160 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{RAS Team}
-\title{Paper Notes}
+\author{D. Kelting, Y. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
+%Minimized names because they didn't fit.
+%Daylan Kelting, Yulia Maliauka, Brittany Manuel, Christopher Pereyda, Aaron Crandall and Maureen Schmitter-Edgecombe
+
+
+\title{RAS}
 
 
 \begin{document}
 
+
 \maketitle
 
-\section{random notes}
 
-We are providing a simple, effective, and accurate way to select unobtrusive 
-places for a robot to sit in standby while staying close enough to the resident to be able to assist them in a timely manner.
-
-
-\section{abstract}
-
-\subsection{motivation}
-why do we care about the problem?
+\section{Main Message and Notes}
 \begin{itemize}
-    \item home robotics are becoming more common
-    \item as the ratio of elderly people to caretakers increases, having an 
-        in-home nurse becomes impractical. We want to be able to place a robot 
-        in a person's home to act as an in-home assistant so the person can continue to live 
-        independently for as long as possible.
-    \item in order for the robot to live in harmony with the residents, the robot needs 
-        to stay close enough to be able to assist the person as 
-        needed, but also out of the way.
+	\item We are providing an effective way to select a place for RAS to sit while on standby. This location needs to be close enough to respond in a timely manner and unobtrusive.
+	\item Use RAS -- Brief intro to him.
+	\item Use past tense -- We, us, our.
 \end{itemize}
 
-\subsection{problem statement}
-Where should the robot be when it is on standby so that it is able to assist people in a timely manner but not obstruct or annoy residents? 
 
-\subsection{approach}
-Using motion sensors embedded in the home we derive the average location of the 
-residents to estimate traffic in the space. Using maps made from this data, we assign a score to every point in the space and return the highest-scoring point within the robot's reach. 
+\section{Title Ideas}
+\begin{itemize}
+	\item Robotics Placement in a Smart Home Environment
+	\item RAS Placement in a Smart Home Environment 
+	\item Lurking Robots While Avoiding Annoyance
+	\item RAS Lurking in Unobtrusive Manner
+	
+\end{itemize}
 
-\subsection{results}
-Points taken from the system that were evaluated subjectively provide good results since they corresponded with either the first or second choice of human participants.\textless insert results from static 
-study\textgreater \textless insert results from DTD evaluation.\textgreater
 
-\subsection{conclusions}
+\section{Abstract Outline}
+
+
+\subsection{Motivation}
+\begin{itemize}
+    \item Home robotics are becoming more common
+    \item As the ratio of elderly people to caretakers increases, having an 
+        in-home nurse becomes impractical. We want to be able to place an assisted living robot 
+        in a person's home in an effort to extend independent living.
+    \item In order for future robotics to live in harmony with residence. Assisted living robots need 		to stay close enough to be able to assist while also not being intrusive. 
+\end{itemize}
+
+
+\subsection{Problem Statement}
+Where shoud RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
+
+
+\subsection{Approach}
+To accomplish our goal we used motion sensors embedded in a smart home environment. We derived the average location of the resident to estimate movement traffic in the space. Using a variety of mas made from this data, we then assigned a score to every point in the space. The highest scoring point with in RAS' reach was determined to be the correct location. 
+
+
+\subsection{Results}
+In order to measure our algorithms success we conducted an informal study with human participants. After comparing the data gathered from our study to our algorithm's preferred point, we determined that we had provided good results. Our code-provided point corresponded to either the first or second choice of our human participants.
+\begin{itemize}
+    \item \textless insert results from static study.\textgreater 
+    \item \textless insert results from DTD evaluation.\textgreater
+\end{itemize}
+
+
+
+\subsection{Conclusions}
 We present an algorithm for dynamic placement of a mobile home assistant robot 
 when no tasks are required. Subjective analysis reveals our algorithm chooses 
 good places to locate the robot. We hope this work provides a good base for 
-future work in mobile robot placement in smarthomes in the future.
+future work in mobile robot placement in smart homes in the future.
 
-\subsection{drafts}
-\subsubsection{draft 1}
-As the ratio of people in need of care to the number of caretakers increases 
-having an in-home nurse becomes more expensive and impractical. Robotic 
-asistance of the elderly is a promising solution to allow people to age 
-in-place more independently. A problem in robotic asistance is where to place 
-the robot when no assistance is needed. The robot should be close enough that 
-it can effectively assist the person if it should become needed, but also out 
-of the way. Here, we describe an algorithm that uses smart home data to choose 
-places for the robot to sit, dynamically as people transition from place to 
-place. \textless insert results from all the things.\textgreater
+
+\subsection{Abstract}
+
+\subsubsection{Draft 1}
+
+As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. One problem in robotic assistance is the location of the robot while it is idle. The robot should be close enough that it can effectively assist the person, but also not be intrusive. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. 
+
+\begin{itemize}
+	\item \textless Insert results from all the things. \textgreater
+\end{itemize}
+
+
+\subsubsection{Draft 2}
+\textless Brittany's Draft here \textgreater
+
+
+\subsubsection{Draft 3}
+\textless Third Draft here \textgreater
 
 
 \section{Introduction}
+Intro after the rest of the paper is written. 
 
-Probably do introduction after we finish the rest of the paper
 
-\section{Related work}
+\section{Related work -- Daylan}
 
 \subsection{To Cite}
 \begin{itemize}
-    \item original RAS paper
-    \item smart home papers
+    \item RAS Paper
+    \item Smart home Paper(s)
+    \item Nurse to Elderly Paper(s)
 \end{itemize}
+
 
 \section{Methods}
 
-\subsection{Notes}
-subsections to create:
-\begin{itemize}
-    \item re-introduce the problem?
-\end{itemize}
 
-\subsection{Problem}
-We are given a SLAM (Simultaneous Location And Mapping) map of the smart home
-and a real time stream of motion sensor data aligned to that slam map.
-Our task is to find a place in the home that allows the robot to move to the
-residents in as short a time as possible (Distance to delivery) while also
-remaining out o fthe way should the residents need to move to a new area of
-the home.
+\subsection{Problem Overview}
+In our problem scenario we are given a Simultaneous Location And Mapping (SLAM) map of a smart home and a real time stream of motion sensor data aligned with the SLAM map. Our task is to design an algorithm that will take this information and produce an optimal location for RAS to idle in. This location needs to be comprised of two key elements: ability to move to the resident in a timely manner and not being intrusive. 
 
-\subsection{Overview of the Solution}
-Using the SLAM map we build a map representing all areas the robot can reach.
-Using the sensor data we build two heatmaps, a long term heatmap and a short
-term heatmap. From the long term heatmap we build a map estimating the traffic
-through the house, which we call the path map. From the short term heatmap we 
-take the weighted average of each point to find the center of recent resident 
-activity. Both the weighted average point and the path map are then used to
-score each point in the reachability map. We then return the maximum scoring
-point as the point the robot should be.
 
-\subsection{Creating and Using the Heatmaps}
+\subsection{Solution Overview}
+For our solution we took two sets of data, SLAM map and sensor data, then we built our own maps with the most relevant data to determine the optimal placement for RAS. 
+
+The first data set we used to built a map was the SLAM map, from that we built a map representing all the areas that RAS can reach, this will be referred to as the reachability map. The reachability map was used to build two additional maps: cramped map and wall map. The cramped map is used to determine spaces that are cramped such as hallways, small offices or doorways. The wall map was made to push in, or waterfall, in walls so that RAS can gravitate toward places that are out of the way. 
+
+The second data used was sensor data from the smart house. From the sensors we built two heatmaps: long term and short term. The long-term heatmap was used to determine the overall traffic through the smart house and build a path map. The short-term heatmap we took the weighted average of each point to find the center of recent activity.
+
+From these maps we built we then combined them into one final map to referred to as the placement map. 
+
+
+\subsection{Creating and Using the Heatmap}
+The long-term heatmap used historcal data collected from the smart home to accumluate sensor triggers over time. This map is designed to capture long-term traffic patterns and locations that resident(s) spend most of their time. This new map is the path map which is the base for our placement map. 
+
+
+
+
 The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap. 
 The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
+
 
 \subsection{Creating and Using the Reachability Map}
 \textit{\textbf{tbd}} 
 
-\subsection{Creating and Using the PathMap}
+
+\subsection{Creating and Using the Path Map}
 \textit{\textbf{tbd}}
 
+
+\subsection{Creating and Using the Wall Map}
+\textit{\textbf{tbd}}
+
+
+\subsection{Creating and Using the CrampedMap}
+\textit{\textbf{tbd}}
+
+
+\section{Results}
+
+
 \section{Citations}
-\subsection{to cite}
 \begin{itemize}
-    \item SLAM paper
+    \item SLAM Paper
+    \item RAS Paper
+    \item Nurse to Eldery People Paper
+    \item Other Paper
 \end{itemize}
 
 
