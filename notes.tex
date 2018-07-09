@@ -112,27 +112,34 @@ From these maps we built we then combined them into one final map to referred to
 
 
 \subsection{Using the SLAM Map}
-
+Explain a bit more about the SLAM map, and the processing we did before we did the below maps.
 
 \subsubsection{Reachability Map}
 Daylan
 
 
 \subsubsection{Wall Map}
-Brittany
+The wall map was created by looking at each point within the SLAM map and "waterfalled" it out by a rate of UNKNOWN until we've reached a value of UNKNOWN or under. This waterfall process is best explained in the infographic below. As you can see with this the points are pushed out until we reach 10 or under. This process was repeated for every point in the SLAM map. We wanted this information so that RAS could gravitate toward walls and stay out of the residents way. 
+
+This map was used in our final placement map by ADD/SUB its value by a rate of UNKNOWN.
 
 
 \subsubsection{Cramped Map}
-Brittany
+The cramped map is similar to the UNKNOWN map. The difference being that the KERNEL size is increaed to a 1.116 meter square. If any area was smaller than this square we would mark that area as cramped. We wanted this information so that RAS would be aware of cramped areas like nooks and hallways to GRAVIATE/AVOID those. 
 
-
+This map was used in our final placement map by ADD/SUB its value by a rate of UNKNOWN.
 
 
 \subsection{Using the Sensor Data}
-
+Explain the sensor data, what kind there is and what specifically we used from the sensor data. I think we just used motion sensors. Double check that. 
 
 \subsubsection{Long-Term Heatmap}
-The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap
+Our long-term heatmap uses historical data collected from the smart home environment. The specific set of data we focused on was the sensor triggers over time, this data set was used to determine approximate traffic patterns of the resident. We wanted this information to be able to have RAS idle near the resident.
+
+This map was used in our final placement map by adding its value by a rate of UNKNOWN. t/f?
+
+
+\textit{\textbf{Original}} The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap
 
 
 \subsubsection{Path Map}
@@ -140,7 +147,12 @@ Daylan
 
 
 \subsubsection{Short-Term Heatmap}
-The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
+Similar to the long-term heatmap, the short-term heatmap uses sensor trigger data from the smart home. However, the short-term heatmap was constantly updated when a sensor was triggered. When these events would occure the map would update to have those areas have a heavier weight. We wanted this information to ensure(sp) that RAS would be near the resident as much as possible. Since we wanted this map to be current it had a decay rate of fifty percent every thirty minutes. 
+
+This map was used in our final placement map by adding its value by a rate of UNKNOWN. t/f?
+
+
+\textit{\textbf{Original}} The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
 
 
 \subsection{Creating and Using the Weighted Average}
