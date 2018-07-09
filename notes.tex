@@ -7,7 +7,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{D. Kelting, Y. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
+\author{D. Kelting, J. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
 %Minimized names because they didn't fit.
 %Daylan Kelting, Yulia Maliauka, Brittany Manuel, Christopher Pereyda, Aaron Crandall and Maureen Schmitter-Edgecombe
 
@@ -53,7 +53,7 @@
 
 
 \subsection{Problem Statement}
-Where shoud RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
+Where should RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
 
 
 \subsection{Approach}
@@ -136,8 +136,8 @@ The long-term heatmap uses historical data collected from the smarthome to sum u
 The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
 
 
-\subsection{Creating and Using the Reachability Map}
-\textit{\textbf{tbd}} 
+\subsection{Creating and Using the Weighted Average}
+The weighted average class accepts a heatmap and generates a single point that represents the average location of the resident over a certain period of time. This point is calculated by adding up all of the values in the heatmap and the distances to them. This value is given a certain weight and used to generate a suggested charging base placement, or a realtime standby location.         
 
 
 \subsection{Creating and Using the Path Map}
@@ -148,9 +148,14 @@ The short-term heatmap, which is generated on a regular basis, assists the navig
 \textit{\textbf{tbd}}
 
 
-\subsection{Creating and Using the CrampedMap}
+\subsection{Creating and Using the Cramped Map}
 \textit{\textbf{tbd}}
 
+\subsection{Creating and Using the Reachability Map}
+\textit{\textbf{tbd}} 
+
+\subsection{The Lurking Algorithm}
+The Lurking Algorithm uses all of the maps and points generated in the system to suggest a single point that Ras should move to at any given time. The different inputs are given different weights which have been tweaked multiple times to fine-tune the output value. The algorithm tends to centralize around the weighted average point, remain close to the walls detailed in the wall map, avoid tight areas illuminated by the cramped map, and cannot traverse into regions forbidden by the reachability map. By altering the weight, or importance, of each input, we can allow Ras to prioritize different regions. It may be beneficial to limit Ras to lounging in the center of the home, or only close to walls and furniture. Our final iteration of the algorithm attempts to balance all of these inputs in a way that maximizes availability to the resident and minimizes annoying the resident or getting stuck in tight spaces. 
 
 \section{Results}
 
