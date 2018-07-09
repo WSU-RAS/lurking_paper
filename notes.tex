@@ -12,21 +12,20 @@
 \begin{document}
 \maketitle
 
-
 \section{Main Message and Notes}
 \begin{itemize}
-	\item We are providing an effective way to select a place for RAS to sit while on standby. This location needs to be close enough to respond in a timely manner and unobtrusive.
-	\item Use RAS -- Brief intro to him.
-	\item Use past tense -- We, us, our.
+        \item We are providing an effective way to select a place for RAS to sit while on standby. This location needs to be close enough to respond in a timely manner and unobtrusive.
+        \item Use RAS -- Brief intro to him.
+        \item Use past tense -- We, us, our.
 \end{itemize}
 
 
 \section{Title Ideas}
 \begin{itemize}
-	\item Robotic Placement in a Smart Home Environment
-	\item RAS Placement in a Smart Home Environment 
-	\item Lurking Robots While Avoiding Annoyance
-	\item RAS Lurking in Unobtrusive Manner
+        \item Robotic Placement in a Smart Home Environment
+        \item RAS Placement in a Smart Home Environment 
+        \item Lurking Robots While Avoiding Annoyance
+        \item RAS Lurking in Unobtrusive Manner
 \end{itemize}
 
 
@@ -37,14 +36,13 @@
 \begin{itemize}
     \item Home robotics are becoming more common
     \item As the ratio of elderly people to caretakers increases, having an 
-        in-home nurse becomes impractical and unaffordable. We want to be able to place an assisted living robot 
-        in a person's home in an effort to extend independent living.
-    \item In order for future robotics to live in harmony with residence, assisted living robots need 		to stay close enough to be able to assist while also not being intrusive. 
+        in-home nurse becomes impractical and not affordable. We want to be able to place an assisted living robot in a person's home in an effort to extend independent living.
+    \item In order for future robotics to live in harmony with residence, assisted living robots need to stay close enough to be able to assist while also not being intrusive. 
 \end{itemize}
 
 
 \subsection{Problem Statement}
-Where shoud RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
+Where should RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
 
 
 \subsection{Approach}
@@ -59,7 +57,6 @@ In order to measure our algorithms success we conducted an informal study with h
 \end{itemize}
 
 
-
 \subsection{Conclusions}
 We present an algorithm for dynamic placement of a mobile home assistant robot 
 when no tasks are required. Subjective analysis reveals our algorithm chooses 
@@ -71,22 +68,23 @@ future work in mobile robot placement in smart homes in the future.
 
 
 \subsubsection{Draft 1}
-As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. One problem in robotic assistance is the location of the robot while it is idle. The robot should be close enough that it can effectively assist the person, but also not be intrusive. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. Insert results from all the things.
+As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. One problem in robotic assistance is the location of the robot while it is idle. The robot should be close enough that it can effectively assist the person, but also not be intrusive. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. \textless RESULTS \textgreater. 
 
 
 \subsubsection{Draft 2}
-\textless Brittany's Draft here \textgreater
-
+LOOK AT CRANDALL SLIDES FOR THE DATA.
+By YEAR it is predicted that the elderly will out number caretakers by NUM to NUM. One of the most promising solutions to this is using robotic assistance. One problem in the robotic assistance field is where should the robot rest so that it is conveniently placed. To alleviate this problem we created an algorithm from smart home data. \textless RESULTS \textgreater. 
 
 \subsubsection{Draft 3}
-\textless Third Draft here \textgreater
+As the ratio of people in need of care to caretakers increases a more practical solution has emerged in the form of robotic assistance. One problem in robotic assistance is the location of the should while it is not needed. This location needs to be nearby while not being intrusive. To help alleviate this problem we created an algorithm that uses smart home data to choose a place for RAS (NAME) to idle dynamically as people transition from place to place. \textless RESULTS \textgreater. 
+
 
 
 \section{Introduction}
 Intro after the rest of the paper is written. 
 
 
-\section{Related work -- Daylan}
+\section{Related Work DAYLAN}
 \subsection{To Cite}
 \begin{itemize}
     \item RAS Paper
@@ -97,70 +95,57 @@ Intro after the rest of the paper is written.
 
 \section{Methods}
 
+
 \subsection{Problem Overview}
-In our problem scenario we are given a Simultaneous Location And Mapping (SLAM) map of a smart home and a real time stream of motion sensor data aligned with the SLAM map. Our task is to design an algorithm that will take this information and produce an optimal location for RAS to idle in. This location needs to be comprised of two key elements: ability to move to the resident in a timely manner and not being intrusive. 
+In our problem scenario, we are given a Simultaneous Location And Mapping (SLAM) map of a smart home and a real time stream of motion sensor data aligned with the SLAM map. Our goal is to design an algorithm that will take this information and produce an optimal location for RAS to idle in. This location needs to be comprised of two key elements: ability to move to the resident in a timely manner and not being intrusive. 
 
 
 \subsection{Solution Overview}
-For our solution we took two sets of data, SLAM map and sensor data, then we built our own maps with the most relevant data to determine the optimal placement for RAS. 
-
-The first data set we used to built a map was the SLAM map, from that we built a map representing all the areas that RAS can reach, this will be referred to as the reachability map. The reachability map was used to build two additional maps: cramped map and wall map. The cramped map is used to determine spaces that are cramped such as hallways, small offices or doorways. The wall map was made to push in, or waterfall, in walls so that RAS can gravitate toward places that are out of the way. 
-
-The second data used was sensor data from the smart house. From the sensors we built two heatmaps: long term and short term. The long-term heatmap was used to determine the overall traffic through the smart house and build a path map. The short-term heatmap we took the weighted average of each point to find the center of recent activity.
-
+For our solution we took two sets of data, SLAM map and sensor data, then we built our own maps with the most relevant data to determine the optimal placement for RAS. Before creating the maps, we processed the SLAM map in a number of ways. From this processed map we built a map representing all the areas that RAS can reach, aptly named the reachability map. An additional map was built from the SLAM map, the wall map was made to push in, or waterfall, in walls so that RAS can gravitate toward places that are out of the way. The reachability map was used to build the cramped map, which is used to determine spaces that are cramped such as hallways, small offices or doorways.
+The second data set, sensor data, was used to built two heatmaps: long term and short term. The long-term heatmap was used to determine the overall traffic through the smart house and build a path map. The short-term heatmap we took the weighted average of each point to find the center of recent activity.
 From these maps we built we then combined them into one final map to referred to as the placement map. 
 
 
 \subsection{Using the SLAM Map}
 Explain a bit more about the SLAM map, and the processing we did before we did the below maps.
 
+
 \subsubsection{Reachability Map}
-Daylan
+DAYLAN
 
 
 \subsubsection{Wall Map}
-The wall map was created by looking at each point within the SLAM map and "waterfalled" it out by a rate of UNKNOWN until we've reached a value of UNKNOWN or under. This waterfall process is best explained in the infographic below. As you can see with this the points are pushed out until we reach 10 or under. This process was repeated for every point in the SLAM map. We wanted this information so that RAS could gravitate toward walls and stay out of the residents way. 
-
-This map was used in our final placement map by ADD/SUB its value by a rate of UNKNOWN.
+The wall map was created by looking at each point within the SLAM map and "waterfall" it out by a rate of seventy percent until we've reached a value of ten or under. This waterfall process is best explained in the info graphic below. As you can see with this, the points are pushed out until we reach 10 or under. This process was repeated for every point in the SLAM map. We wanted this information so that RAS could gravitate toward walls and stay out of the residents way. 
+This map was used in our final placement map by adding its value weighted at 0.5.
 
 
 \subsubsection{Cramped Map}
-The cramped map is similar to the UNKNOWN map. The difference being that the KERNEL size is increaed to a 1.116 meter square. If any area was smaller than this square we would mark that area as cramped. We wanted this information so that RAS would be aware of cramped areas like nooks and hallways to GRAVIATE/AVOID those. 
-
-This map was used in our final placement map by ADD/SUB its value by a rate of UNKNOWN.
+The cramped map is similar to the UNKNOWN map. The difference being that the KERNEL size is increased to a 1.116 meter square. If any area was smaller than this square we would mark that area as cramped. We wanted this information so that RAS would be aware of cramped areas so they could be avoided. 
+This map was used in our final placement map by subtracting its value weighted at 100.
 
 
 \subsection{Using the Sensor Data}
 Explain the sensor data, what kind there is and what specifically we used from the sensor data. I think we just used motion sensors. Double check that. 
 
+
 \subsubsection{Long-Term Heatmap}
 Our long-term heatmap uses historical data collected from the smart home environment. The specific set of data we focused on was the sensor triggers over time, this data set was used to determine approximate traffic patterns of the resident. We wanted this information to be able to have RAS idle near the resident.
 
-This map was used in our final placement map by adding its value by a rate of UNKNOWN. t/f?
-
-
-\textit{\textbf{Original}} The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap
-
 
 \subsubsection{Path Map}
-Daylan
+DAYLAN
 
 
 \subsubsection{Short-Term Heatmap}
-Similar to the long-term heatmap, the short-term heatmap uses sensor trigger data from the smart home. However, the short-term heatmap was constantly updated when a sensor was triggered. When these events would occure the map would update to have those areas have a heavier weight. We wanted this information to ensure(sp) that RAS would be near the resident as much as possible. Since we wanted this map to be current it had a decay rate of fifty percent every thirty minutes. 
-
-This map was used in our final placement map by adding its value by a rate of UNKNOWN. t/f?
-
-
-\textit{\textbf{Original}} The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
+Similar to the long-term heatmap, the short-term heatmap uses sensor trigger data from the smart home. However, the short-term heatmap was constantly updated when a sensor was triggered. When these events would occur the map would update have a heavier weight at that location. We wanted this information to ensure that RAS would be near the resident as much as possible. Since we wanted this map to be current, it had a decay rate of fifty percent every thirty minutes. 
 
 
 \subsubsection{Weight Map}
-The weighted average class accepts a heatmap and generates a single point that represents the average location of the resident over a certain period of time. This point is calculated by adding up all of the values in the heatmap and the distances to them. This value is given a certain weight and used to generate a suggested charging base placement, or a realtime standby location.
+To create the weighted average map we would use the short term heatmap. This would produce a single point that represents the average location of the resident in this time frame. To obtain this value we would give each point a weight multiplier. This weight is a reflection of how active that point was in the short-term heatmap. We then summed these points up to get a singular average location that we would want RAS to gravitate toward. This point was used in our final placement map by subtracting its value weighted at 0.1. 
 
 
 \subsection{Putting it All Together}
-The Lurking Algorithm uses all of the maps and points generated in the system to suggest a single point that Ras should move to at any given time. The different inputs are given different weights which have been tweaked multiple times to fine-tune the output value. The algorithm tends to centralize around the weighted average point, remain close to the walls detailed in the wall map, avoid tight areas illuminated by the cramped map, and cannot traverse into regions forbidden by the reachability map. By altering the weight, or importance, of each input, we can allow Ras to prioritize different regions. It may be beneficial to limit Ras to lounging in the center of the home, or only close to walls and furniture. Our final iteration of the algorithm attempts to balance all of these inputs in a way that maximizes availability to the resident and minimizes annoying the resident or getting stuck in tight spaces. 
+Our lurking algorithm uses the above maps to suggest the optimal locations for RAS. The weights we used for each map have been manipulated multiple times to optimize our final point. We noticed some predictable trends: centralized around the weighted average, remain close to walls from the wall map, avoid tight areas from the cramped map, and ignoring regions forbidden by the reachability map. By altering the importance of each input, we can allow RAS to prioritize different regions. Our final iteration of the algorithm attempts to balance all these inputs in a way that maximized availability to the resident and minimized annoying the resident and avoiding tight places.
 
 
 \section{Discussion}
@@ -197,6 +182,4 @@ Delay until finished.
     \item Nurse to Eldery People Paper
     \item Other Paper
 \end{itemize}
-
-
 \end{document}
