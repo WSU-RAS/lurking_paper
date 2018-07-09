@@ -1,5 +1,3 @@
-
-
 \documentclass[11pt, conference, a4paper]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -10,14 +8,8 @@
 \author{D. Kelting, Y. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
 %Minimized names because they didn't fit.
 %Daylan Kelting, Yulia Maliauka, Brittany Manuel, Christopher Pereyda, Aaron Crandall and Maureen Schmitter-Edgecombe
-
-
 \title{RAS}
-
-
 \begin{document}
-
-
 \maketitle
 
 
@@ -31,11 +23,10 @@
 
 \section{Title Ideas}
 \begin{itemize}
-	\item Robotics Placement in a Smart Home Environment
+	\item Robotic Placement in a Smart Home Environment
 	\item RAS Placement in a Smart Home Environment 
 	\item Lurking Robots While Avoiding Annoyance
 	\item RAS Lurking in Unobtrusive Manner
-	
 \end{itemize}
 
 
@@ -76,15 +67,11 @@ good places to locate the robot. We hope this work provides a good base for
 future work in mobile robot placement in smart homes in the future.
 
 
-\subsection{Abstract}
+\subsection{Abstract Drafts}
+
 
 \subsubsection{Draft 1}
-
-As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. One problem in robotic assistance is the location of the robot while it is idle. The robot should be close enough that it can effectively assist the person, but also not be intrusive. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. 
-
-\begin{itemize}
-	\item \textless Insert results from all the things. \textgreater
-\end{itemize}
+As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. One problem in robotic assistance is the location of the robot while it is idle. The robot should be close enough that it can effectively assist the person, but also not be intrusive. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. Insert results from all the things.
 
 
 \subsubsection{Draft 2}
@@ -100,7 +87,6 @@ Intro after the rest of the paper is written.
 
 
 \section{Related work -- Daylan}
-
 \subsection{To Cite}
 \begin{itemize}
     \item RAS Paper
@@ -110,7 +96,6 @@ Intro after the rest of the paper is written.
 
 
 \section{Methods}
-
 
 \subsection{Problem Overview}
 In our problem scenario we are given a Simultaneous Location And Mapping (SLAM) map of a smart home and a real time stream of motion sensor data aligned with the SLAM map. Our task is to design an algorithm that will take this information and produce an optimal location for RAS to idle in. This location needs to be comprised of two key elements: ability to move to the resident in a timely manner and not being intrusive. 
@@ -126,43 +111,80 @@ The second data used was sensor data from the smart house. From the sensors we b
 From these maps we built we then combined them into one final map to referred to as the placement map. 
 
 
-\subsection{Creating and Using the Heatmap}
-The long-term heatmap used historcal data collected from the smart home to accumluate sensor triggers over time. This map is designed to capture long-term traffic patterns and locations that resident(s) spend most of their time. This new map is the path map which is the base for our placement map. 
+\subsection{Using the SLAM Map}
+
+
+\subsubsection{Reachability Map}
+Daylan
+
+
+\subsubsection{Wall Map}
+Brittany
+
+
+\subsubsection{Cramped Map}
+Brittany
 
 
 
 
-The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap. 
+\subsection{Using the Sensor Data}
+
+
+\subsubsection{Long-Term Heatmap}
+The long-term heatmap uses historical data collected from the smarthome to sum up sensor triggers over time. This map is used to help the algorithm approximate long-term traffic patterns of the resident. Deciding where to place the charging base in the home can be a difficult process, since RAS needs to be able to assist the resident in a timely manner while also staying out of the way of everyday traffic. For this reason, the long-term heatmap is used to select the spot where the resident spends most of their time, and then additional information is used to select a spot that is out of the way - namely, the pathmap
+
+
+\subsubsection{Path Map}
+Daylan
+
+
+\subsubsection{Short-Term Heatmap}
 The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
 
 
-\subsection{Creating and Using the Reachability Map}
-\textit{\textbf{tbd}} 
+\subsubsection{Weight Map}
+Done
 
 
-\subsection{Creating and Using the Path Map}
-\textit{\textbf{tbd}}
+\subsection{Putting it All Together}
+\textit{\textbf{Yulia}}
 
 
-\subsection{Creating and Using the Wall Map}
-\textit{\textbf{tbd}}
+\section{Discussion}
+Limits of:
+\begin{itemize}
+    \item Results
+    \item Time
+    \item Prelim study, most people were researchers (grad, undergrad students)
+    \item Not generalized
+    \item only worked with one layout
+\end{itemize}
 
 
-\subsection{Creating and Using the CrampedMap}
-\textit{\textbf{tbd}}
+\section{Future Works}
+Connect it back to how you'd like to fix problems in discussion.
 
 
-\section{Results}
+\section{Conclution}
+Delay until finished.
 
 
-\section{Citations}
+\section{Acknowledgements}
+\begin{itemize}
+    \item Mentors: Crandall, Holder, Cook, Schmitter-Edgecombe, Chris?
+    \item Money people
+    \item Other?
+\end{itemize}
+
+
+\section{References}
 \begin{itemize}
     \item SLAM Paper
     \item RAS Paper
     \item Nurse to Eldery People Paper
     \item Other Paper
 \end{itemize}
-
 
 
 \end{document}
