@@ -5,7 +5,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{D. Kelting, Y. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
+\author{D. Kelting, J. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
 %Minimized names because they didn't fit.
 %Daylan Kelting, Yulia Maliauka, Brittany Manuel, Christopher Pereyda, Aaron Crandall and Maureen Schmitter-Edgecombe
 \title{RAS}
@@ -15,7 +15,7 @@
 
 \section{Main Message and Notes}
 \begin{itemize}
-	\item We are providing an effective way to select a place for RAS to sit while on standby. This location needs to be close enough to respond in a timely manner and unobtrusive.
+	\item We are providing an effective way to select a location to place RAS while it is on standby. This location needs to be close enough to respond in a timely manner but unobtrusive to the resident.
 	\item Use RAS -- Brief intro to him.
 	\item Use past tense -- We, us, our.
 \end{itemize}
@@ -37,22 +37,22 @@
 \begin{itemize}
     \item Home robotics are becoming more common
     \item As the ratio of elderly people to caretakers increases, having an 
-        in-home nurse becomes impractical. We want to be able to place an assisted living robot 
-        in a person's home in an effort to extend independent living.
-    \item In order for future robotics to live in harmony with residence. Assisted living robots need 		to stay close enough to be able to assist while also not being intrusive. 
+        in-home nurse becomes impractical and unaffordable. We want to be able to place an assisted living robot 
+        in a person's home to extend independent living.
+    \item In order for future robotics to live in harmony with residents, assisted living robots need to stay close enough to be able to assist while also not being intrusive. 
 \end{itemize}
 
 
 \subsection{Problem Statement}
-Where shoud RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
+Where should RAS be during periods of non-use? This placement needs to be close enough to assist the resident while not being an annoyance. 
 
 
 \subsection{Approach}
-To accomplish our goal we used motion sensors embedded in a smart home environment. We derived the average location of the resident to estimate movement traffic in the space. Using a variety of mas made from this data, we then assigned a score to every point in the space. The highest scoring point with in RAS' reach was determined to be the correct location. 
+We collected resident location data using motion sensors embedded in a smart home environment. We derived the average location of the resident to estimate traffic patterns in the space. Using a variety of maps made from this data, we then assigned a score to every point in the space. The highest-scoring point within RAS' reach was determined to be the ideal location.
 
 
 \subsection{Results}
-In order to measure our algorithms success we conducted an informal study with human participants. After comparing the data gathered from our study to our algorithm's preferred point, we determined that we had provided good results. Our code-provided point corresponded to either the first or second choice of our human participants.
+In order to measure our algorithms success we conducted an informal study with human participants. After comparing the data gathered from our study to our algorithm's suggested point, we determined that we had provided good results. Our algorithm-generated point corresponded to either the first or second choice of our human participants.
 \begin{itemize}
     \item \textless insert results from static study.\textgreater 
     \item \textless insert results from DTD evaluation.\textgreater
@@ -143,9 +143,8 @@ Daylan
 The short-term heatmap, which is generated on a regular basis, assists the navigation algorithm continuously. When sensors in the smarthome are triggered, the short-term heatmap increments these sensors in the map, and routinely decays the heatmap by a factor of 50\% every 30 minutes. 
 
 
-\subsubsection{Weight Map}
-Done
-
+\subsection{Creating and Using the Weighted Average}
+The weighted average class accepts a heatmap and generates a single point that represents the average location of the resident over a certain period of time. This point is calculated by adding up all of the values in the heatmap and the distances to them. This value is given a certain weight and used to generate a suggested charging base placement, or a realtime standby location.         
 
 \subsection{Putting it All Together}
 \textit{\textbf{Yulia}}
@@ -166,9 +165,17 @@ Limits of:
 Connect it back to how you'd like to fix problems in discussion.
 
 
+\subsection{Creating and Using the Cramped Map}
+\textit{\textbf{tbd}}
+
+\subsection{Creating and Using the Reachability Map}
+\textit{\textbf{tbd}} 
+
+\subsection{The Lurking Algorithm}
+The Lurking Algorithm uses all of the maps and points generated in the system to suggest a single point that RAS should move to at any given time. The different inputs are given different weights which have been tweaked multiple times to fine-tune the output value. The algorithm tends to centralize around the weighted average point, remain close to the walls detailed in the wall map, avoid tight areas illuminated by the cramped map, and cannot traverse into regions forbidden by the reachability map. By altering the weight, or importance, of each input, we can allow RAS to prioritize different regions. It may be beneficial to limit RAS to lounging in the center of the home, or only close to walls and furniture. Our final iteration of the algorithm attempts to balance all of these inputs in a way that maximizes availability to the resident and minimizes annoying the resident or getting stuck in tight spaces. 
+
 \section{Conclution}
 Delay until finished.
-
 
 \section{Acknowledgements}
 \begin{itemize}
