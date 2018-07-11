@@ -1,5 +1,7 @@
 *.log
 *.aux
+*.bbl
+*.blg
 *.dvi
 *.bak
 *.fdb_latexmk
