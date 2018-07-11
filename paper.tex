@@ -6,8 +6,9 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{textcomp}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{D. Kelting, J. Maliauka, B. Manuel, C. Pereyda, A. Crandall and M. Schmitter-Edgecombe}
+\author{D. Kelting, J. Maliauka, B. Manuel, C. Pereyda, A. Crandall, M. Schmitter-Edgecombe, and D. Cook}
 %Minimized names because they didn't fit.
 %Daylan Kelting, Julia Maliauka, Brittany Manuel, Christopher Pereyda, Aaron Crandall and Maureen Schmitter-Edgecombe
 \title{Dynamic Robot Placement in Smart Environments}
@@ -16,14 +17,13 @@
 
 
 \section{Abstract}
-As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. One problem in robotic assistance is the location of the robot while it is idle. The robot should be close enough that it can effectively assist the person, but also not be intrusive. Here, we describe an algorithm that uses smart home data to choose places for the robot to sit, dynamically as people transition from place to place. In our approach we collected data using sensors in our smart home environment. We derived the average location of the resident to estimate traffic patterns in the space; additionally, we used a variety of maps made from this data to adjust for walls, tight spaces, traffic and areas the robot could reach. Once all of this information is complied, the highest-scoring point within reach was determined to be the ideal location. To validate our results we conducted an informal study. [INFO ABOUT STUDY]. Results are pending as our study finishes.
+As the ratio of people in need of care to the number of caretakers increases, having an in-home nurse has become more impractical. Robotic assistance for the elderly is a promising solution to allow people to age in-place independently. A robotic assistant would potentially be able to remind the user of day to day tasks and guide them through tasks when they are having difficulty. One problem in robotic assistance is the question of where the robot should be when no intervention is needed. In order to be effective the robot must be able to approach the user in a timely manner. However, the robot must also stay out of any potential paths the person could take as they transition from one activity to the next. Here, we describe an algorithm that uses smart home data to choose locations for the robot to sit, in real time as people transition from place to place. Using a combination of smart home sensor data and SLAM (Simultaneous Location And Mapping) our algorithm reliably finds locations that are close to users while also being out of the way. We evaluate our algorithm using both historical data and a preliminary survey study. \textlangle{}begin projected results\textrangle{} Our historical data analysis show that our algorithm maintains a distance of \textlangle{}...\textrangle{} from users even when there are multiple users in the space. Our survey study show a strong correlation between human scores of locations and algorithm scores. \textlangle{}end projected results\textrangle{} This work will allow home and medical robots to live more harmoniously with human users while also having better access to those users.
 
 
 \section{Introduction}
 Intro after the rest of the paper is written. 
 
-
-\section{Related Work DAYLAN}
+\section{Related Work (DAYLAN)}
 \subsection{To Cite}
 \begin{itemize}
     \item RAS Paper
